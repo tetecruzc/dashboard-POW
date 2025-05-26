@@ -19,6 +19,7 @@
     height: 100vh;
     background: var(--bg);
     color: var(--tertiary);
+    overflow-y: hidden;
   }
 
   header h1 {
@@ -82,8 +83,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    height: 100vh;
+    overflow-y: hidden;
   }
 
   header {
@@ -228,138 +228,142 @@ position: relative;
 border: 2px solid transparent;
 }
 
-/* Primer card: verde con sombra al hover */
-.lab-card:first-child {
-background: #dcfce7;
-color: #166534;
-border-color: #bbf7d0;
-}
-.lab-card:first-child:hover {
-background: #bbf7d0;
-color: #166534;
-box-shadow: 0 2px 18px #16a34a33;
-transform: scale(1.05) rotate(-2deg);
-}
+.lab-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .lab-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 7px #2563eb10;
+    padding: 1.1em 1.3em;
+    color: #1e293b;
+    font-size: 1rem;
+    min-width: 90px;
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    transition:
+      background .18s,
+      color .16s,
+      box-shadow .18s,
+      transform .16s,
+      border .14s,
+      font-weight .14s;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .lab-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .lab-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 7px #2563eb10;
+    padding: 1.1em 1.3em;
+    color: #1e293b;
+    font-size: 1rem;
+    min-width: 90px;
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    transition:
+      background .18s,
+      color .16s,
+      box-shadow .18s,
+      transform .16s,
+      border .14s,
+      font-weight .14s;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* 1. El primer item: verde claro, texto verde oscuro */
+  .lab-card:first-child {
+    background: #d1fae5;
+    color: #166534;
+  }
+  
+  /* 2. El último ítem: amarillo, texto amarillo oscuro */
+  .lab-card:last-child {
+    background: #fef9c3;
+    color: #b45309;
+  }
+  
+  /* 3. Ítems impares: texto negrita */
+  .lab-card:nth-child(odd) {
+    font-weight: bold;
+  }
+  
+  /* 4. Ítem nro 5 desde el final (6to en este ejemplo): subrayado discontinuo y fondo/texto azul */
+  .lab-card:nth-last-child(5) {
+    background: #dbeafe;
+    color: #1e40af;
+    text-decoration: underline dashed #2563eb 2px;
+  }
+  .lab-card:nth-last-child(5):hover {
+    text-decoration-thickness: 4px;
+  }
+  
+  /* 5. Ítem vacío (el 7): borde pespunteado morado */
+  .lab-card:nth-child(7):empty {
+    border: 2px dashed #a21caf;
+    background-color: #f3e8ff;
+  }
+  
+  /* 6. Ítems pares: hover -> rotados a la izquierda */
+  .lab-card:nth-child(even):hover {
+    transform: rotate(-7deg);
+  }
+  
+  /* 7. Ítem nro 6: hover -> escala */
+  .lab-card:nth-child(6):hover {
+    transform: scale(1.12);
+    box-shadow: 0 4px 16px #2563eb28;
+  }
 
-/* Última card: morado, rebota al active */
-.lab-card:last-child {
-background: #ede9fe;
-color: #5b21b6;
-border-color: #ddd6fe;
-font-weight: bold;
-}
-.lab-card:last-child:active {
-transform: scale(0.95) rotate(4deg);
-background: #a78bfa;
-color: white;
-border-color: #7c3aed;
-}
-
-/* Card par: azul clarito al hover */
-.lab-card:nth-child(even) {
-background: #eff6ff;
-color: #2563eb;
-}
-.lab-card:nth-child(even):hover {
-background: #2563eb;
-color: #fff;
-border-color: #2563eb;
-}
-
-/* Card impar: amarillo al hover */
-.lab-card:nth-child(odd):hover {
-background: #fef9c3;
-color: #b45309;
-border-color: #fde68a;
-}
-
-/* Card 3: sombra naranja y escala */
-.lab-card:nth-child(3) {
-background: #fff7ed;
-color: #ea580c;
-border-color: #fdba74;
-font-style: italic;
-}
-.lab-card:nth-child(3):hover {
-box-shadow: 0 4px 14px #fb923c33;
-background: #fdba74;
-color: #fff;
-transform: scale(1.08);
-}
-
-/* Card 5, 10: subraya al hover */
-.lab-card:nth-child(5),
-.lab-card:nth-child(10) {
-text-decoration: underline dashed #2563eb 2px;
-}
-.lab-card:nth-child(5):hover,
-.lab-card:nth-child(10):hover {
-background: #e0e7ff;
-color: #1e40af;
-text-decoration-thickness: 4px;
-}
-
-/* Card múltiplos de 4: escala y color rosado al hover */
-.lab-card:nth-child(4n) {
-background: #fdf2f8;
-color: #be185d;
-border-color: #fbcfe8;
-}
-.lab-card:nth-child(4n):hover {
-background: #f472b6;
-color: #fff;
-border-color: #be185d;
-transform: scale(1.07);
-}
-
-/* Card que NO sea la 6 ni la 7: border gris al focus */
-.lab-card:not(:nth-child(6)):not(:nth-child(7)):focus {
-border: 2px solid #64748b;
-outline: none;
-z-index: 1;
-}
-
-/* Card 6: badge al lado derecho */
-/* .lab-card:nth-child(6)::after {
-content: '⭐';
-position: absolute;
-top: 8px;
-right: 15px;
-font-size: 1.25em;
-} */
-
-/* Card 2 y 8: fondo aqua y texto oscuro al active */
-.lab-card:nth-child(2),
-.lab-card:nth-child(8) {
-background: #ccfbf1;
-color: #134e4a;
-border-color: #99f6e4;
-}
-.lab-card:nth-child(2):active,
-.lab-card:nth-child(8):active {
-background: #14b8a6;
-color: #fff;
-border-color: #134e4a;
-transform: scale(.98) skew(-2deg, 2deg);
-}
-
-/* Cualquier card con hover: box-shadow más grande */
-.lab-card:hover {
-box-shadow: 0 4px 16px #2563eb25;
-z-index: 2;
-}
-
-/* Card 7: rotación al hover y active */
-.lab-card:nth-child(7):hover {
-transform: rotate(-7deg) scale(1.1);
-background: #dbeafe;
-color: #0ea5e9;
-}
-.lab-card:nth-child(7):active {
-transform: rotate(8deg) scale(.98);
-background: #2563eb;
-color: #fff;
-}
+  /* 8. Item 3: active -> naranja */
+  .lab-card:nth-child(3):active {
+    background-color: #ffedd5;
+    color: #f97316
+  }
+  
+  
+  /* Sombra y transición general */
+  .lab-card {
+    transition:
+      background .21s,
+      color .18s,
+      box-shadow .22s,
+      transform .18s,
+      border .17s,
+      font-weight .17s,
+      font-style .17s,
+      letter-spacing .15s;
+    box-shadow: 0 1px 7px #2563eb10;
+  }
+  
+  .lab-card:hover {
+    box-shadow: 0 4px 16px #2563eb25;
+    z-index: 2;
+  }
+  
 
 /* form */
 .form-demo {
