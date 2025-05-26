@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="https://cajavirtual.ucab.edu.ve/images/logo-ucab3.png" alt="Logo" />
+      Taller #2
+    </div>
+    <nav>
+      <a href="#" class="active">Inicio</a>
+      <a href="#">Historial</a>
+      <a href="#">Calendario</a>
+      <a href="#">Perfil</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header>
+      <h1>Panel de Administración</h1>
+    </header>
+
+    <div class="content">
+      <section class="grid">
+        <div class="banner box1">
+            <h2>¡Bienvenido a Programación Orientada a la Web!</h2>
+            <p>Panel de administrador</p>
+        </div>
+        <div class="box box2">
+            <h2 class="card-title">Mi perfil</h2>
+            <form class="form-demo" autocomplete="off">
+              <label>
+                Nombre
+                <input type="text" name="nombre" placeholder="Tu nombre" required />
+              </label>
+              <label>
+                Correo electrónico
+                <input type="email" name="correo" placeholder="tucorreo@email.com" required />
+              </label>
+              <label>
+                Contraseña
+                <input type="password" name="clave" placeholder="********" minlength="6" required />
+              </label>
+              <label>
+                Tipo de usuario
+                <select required>
+                  <option value="">Selecciona...</option>
+                  <option>Administrador</option>
+                  <option>Usuario</option>
+                </select>
+              </label>
+              <label class="check-group">
+                <input type="checkbox" required />
+                Acepto los <a href="#">términos</a>
+              </label>
+              <button type="submit">Enviar</button>
+              <button disabled type="submit">Reiniciar</button>
+            </form>
+          </div>
+          
+        <div class="box box3 stat-card">
+           <div class="stat-info">
+             <div class="stat-label">Usuarios</div>
+             <div class="stat-value">1,234</div>
+           </div>
+           <div class="stat-icon users">
+             <!-- Heroicons UserGroup -->
+             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+               <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M15 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM23 20v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+             </svg>
+           </div>
+         </div> 
+         <div class="box box4 stat-card">
+            <div class="stat-info">
+              <div class="stat-label">Ventas</div>
+              <div class="stat-value">$45,678</div>
+            </div>
+            <div class="stat-icon sales">
+              <!-- Heroicons CurrencyDollar -->
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" fill="#bbf7d0"/>
+                <path d="M12 6v12M15 9c0-1.5-1.5-3-3-3s-3 1.5-3 3c0 3 6 3 6 6 0 1.5-1.5 3-3 3s-3-1.5-3-3" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="box box5 stat-card">
+            <div class="stat-info">
+              <div class="stat-label">Pedidos</div>
+              <div class="stat-value">892</div>
+            </div>
+            <div class="stat-icon orders">
+              <!-- Heroicons LockClosed -->
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  d="M16 10V8a4 4 0 1 0-8 0v2m10 0H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2Z" />
+              </svg>
+            </div>
+          </div>
+        <div class="box box6 ">
+            <h2 class="card-title">Practicando Flexbox</h2>
+            <div class="lab-cards">
+                <div class="lab-card">Card 1</div>
+                <div class="lab-card">Card 2</div>
+                <div class="lab-card">Card 3</div>
+                <div class="lab-card">Card 4</div>
+                <div class="lab-card">Card 5</div>
+                <div class="lab-card">Card 6</div>
+                <div class="lab-card">Card 7</div>
+                <div class="lab-card">Card 8</div>
+                <div class="lab-card">Card 9</div>
+                <div class="lab-card">Card 10</div>
+            </div>
+          </div>
+        <!-- <div class="box box7">7</div>  -->
+      </section>
+    </div>
+  </div>
+</body>
+</html>

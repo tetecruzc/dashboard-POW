@@ -1,0 +1,459 @@
+
+:root {
+    --primary: #3870e8;
+    --secondary: #1e40af;
+    --tertiary: #111827;
+    --bg: #f9fafb;
+    --text-light: #d1d5db;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    height: 100vh;
+    background: var(--bg);
+    color: var(--tertiary);
+  }
+
+  header h1 {
+      font-size: 1.3rem;
+  }
+
+  h2.card-title {
+      font-size: 1.3rem;
+      width: 100%;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(207, 207, 207, 0.478);
+  }
+
+
+  .sidebar {
+    width: 260px;
+    background: var(--tertiary);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+  }
+
+  .sidebar .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  .sidebar .logo img {
+    width: 42px;
+    height: auto;
+  }
+
+  .sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: background 0.2s;
+    margin-bottom: 0.25rem;
+  }
+
+  .sidebar nav a:hover {
+    background: #1f2937;
+    color: white;
+  }
+
+  .sidebar nav a.active {
+    background: var(--secondary);
+    color: white;
+  }
+
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  header {
+    background: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+  }
+
+  .banner {
+    background: linear-gradient(to right, #1d54cb, #3b82f6);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .banner h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 340px;
+    grid-template-rows: 150px 100px auto auto;
+    gap: 1rem;
+    flex: 1;
+  }
+
+
+.box1 { grid-area: 1 / 1 / 2 / 4; }
+.box2 { grid-area: 1 / 4 / 5 / 4; }
+.box3 { grid-area: 2 / 1 / 3 / 2; }
+.box4 { grid-area: 2 / 2 / 3 / 3; }
+.box5 { grid-area: 2 / 3 / 3 / 4; }
+.box6 { grid-area: 3 / 1 / 5 / 4; }
+/* .box7 { grid-area: 3 / 3 / 5 / 4; } */
+
+  .box {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    /* min-height: 140px; */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+
+.stat-card {
+padding: 1rem;
+display: flex;
+align-items: center;
+position: relative;
+transition: box-shadow 0.2s, transform 0.2s;
+}
+.stat-card:hover {
+box-shadow: 0 4px 18px rgba(37,99,235,0.11);
+transform: translateY(-3px) scale(1.01);
+}
+.stat-info {
+flex: 1;
+}
+.stat-label {
+color: #6b7280;
+font-size: .9rem;
+margin-bottom: .2rem;
+font-weight: 500;
+letter-spacing: .01em;
+}
+.stat-value {
+color: #1e293b;
+font-size: 1.8rem;
+font-weight: 700;
+letter-spacing: -0.02em;
+}
+.stat-icon {
+width: 48px;
+height: 48px;
+border-radius: 50%;
+margin-left: 1.4rem;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+font-size: 1.7rem;
+}
+.stat-icon.users {
+background: #e0e7ff;
+color: #2563eb;
+}
+.stat-icon.sales {
+background: #d1fae5;
+color: #10b981;
+}
+.stat-icon.orders {
+background: #fef9c3;
+color: #b45309;
+}
+
+.lab-cards {
+display: flex;
+flex-wrap: wrap;
+gap: 2rem;
+align-items: center;
+justify-content: center;
+align-content: center;
+height: 100%;
+/* min-width: 260px;
+max-width: 900px; */
+}
+
+.lab-card {
+background: #fff;
+border-radius: 10px;
+box-shadow: 0 1px 7px #2563eb10;
+padding: 1.1em 1.3em;
+color: #1e293b;
+font-size: 1rem;
+font-weight: 500;
+min-width: 90px;
+min-height: 58px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: 
+  background .21s, 
+  color .18s, 
+  box-shadow .22s, 
+  transform .18s,
+  border .17s;
+cursor: pointer;
+position: relative;
+border: 2px solid transparent;
+}
+
+/* Primer card: verde con sombra al hover */
+.lab-card:first-child {
+background: #dcfce7;
+color: #166534;
+border-color: #bbf7d0;
+}
+.lab-card:first-child:hover {
+background: #bbf7d0;
+color: #166534;
+box-shadow: 0 2px 18px #16a34a33;
+transform: scale(1.05) rotate(-2deg);
+}
+
+/* Última card: morado, rebota al active */
+.lab-card:last-child {
+background: #ede9fe;
+color: #5b21b6;
+border-color: #ddd6fe;
+font-weight: bold;
+}
+.lab-card:last-child:active {
+transform: scale(0.95) rotate(4deg);
+background: #a78bfa;
+color: white;
+border-color: #7c3aed;
+}
+
+/* Card par: azul clarito al hover */
+.lab-card:nth-child(even) {
+background: #eff6ff;
+color: #2563eb;
+}
+.lab-card:nth-child(even):hover {
+background: #2563eb;
+color: #fff;
+border-color: #2563eb;
+}
+
+/* Card impar: amarillo al hover */
+.lab-card:nth-child(odd):hover {
+background: #fef9c3;
+color: #b45309;
+border-color: #fde68a;
+}
+
+/* Card 3: sombra naranja y escala */
+.lab-card:nth-child(3) {
+background: #fff7ed;
+color: #ea580c;
+border-color: #fdba74;
+font-style: italic;
+}
+.lab-card:nth-child(3):hover {
+box-shadow: 0 4px 14px #fb923c33;
+background: #fdba74;
+color: #fff;
+transform: scale(1.08);
+}
+
+/* Card 5, 10: subraya al hover */
+.lab-card:nth-child(5),
+.lab-card:nth-child(10) {
+text-decoration: underline dashed #2563eb 2px;
+}
+.lab-card:nth-child(5):hover,
+.lab-card:nth-child(10):hover {
+background: #e0e7ff;
+color: #1e40af;
+text-decoration-thickness: 4px;
+}
+
+/* Card múltiplos de 4: escala y color rosado al hover */
+.lab-card:nth-child(4n) {
+background: #fdf2f8;
+color: #be185d;
+border-color: #fbcfe8;
+}
+.lab-card:nth-child(4n):hover {
+background: #f472b6;
+color: #fff;
+border-color: #be185d;
+transform: scale(1.07);
+}
+
+/* Card que NO sea la 6 ni la 7: border gris al focus */
+.lab-card:not(:nth-child(6)):not(:nth-child(7)):focus {
+border: 2px solid #64748b;
+outline: none;
+z-index: 1;
+}
+
+/* Card 6: badge al lado derecho */
+/* .lab-card:nth-child(6)::after {
+content: '⭐';
+position: absolute;
+top: 8px;
+right: 15px;
+font-size: 1.25em;
+} */
+
+/* Card 2 y 8: fondo aqua y texto oscuro al active */
+.lab-card:nth-child(2),
+.lab-card:nth-child(8) {
+background: #ccfbf1;
+color: #134e4a;
+border-color: #99f6e4;
+}
+.lab-card:nth-child(2):active,
+.lab-card:nth-child(8):active {
+background: #14b8a6;
+color: #fff;
+border-color: #134e4a;
+transform: scale(.98) skew(-2deg, 2deg);
+}
+
+/* Cualquier card con hover: box-shadow más grande */
+.lab-card:hover {
+box-shadow: 0 4px 16px #2563eb25;
+z-index: 2;
+}
+
+/* Card 7: rotación al hover y active */
+.lab-card:nth-child(7):hover {
+transform: rotate(-7deg) scale(1.1);
+background: #dbeafe;
+color: #0ea5e9;
+}
+.lab-card:nth-child(7):active {
+transform: rotate(8deg) scale(.98);
+background: #2563eb;
+color: #fff;
+}
+
+/* form */
+.form-demo {
+display: flex;
+flex-direction: column;
+gap: 1.05rem;
+font-size: 1rem;
+margin-top: 20px;
+}
+
+.form-demo label {
+color: var(--secondary);
+font-weight: 500;
+display: flex;
+flex-direction: column;
+gap: .25em;
+position: relative;
+}
+
+.form-demo input[type="text"],
+.form-demo input[type="email"],
+.form-demo input[type="password"],
+.form-demo select {
+padding: 0.55em 1em;
+border-radius: 6px;
+border: 1.5px solid #d1d5db;
+background: #f9fafb;
+font-size: 1rem;
+transition: border .18s, box-shadow .18s, background .18s;
+margin-top: 0.12em;
+}
+
+.form-demo input:focus,
+.form-demo select:focus {
+border: 1.5px solid var(--secondary);
+background: #e0e7ff;
+outline: none;
+box-shadow: 0 2px 7px var(--secondary)25;
+}
+
+/* Validación en tiempo real */
+.form-demo input:invalid:not(:focus):not(:placeholder-shown),
+.form-demo select:invalid:not(:focus) {
+border-color: #f87171;
+background: #fef2f2;
+}
+.form-demo input:valid:not(:focus):not(:placeholder-shown),
+.form-demo select:valid:not(:focus) {
+border-color: #22c55e;
+background: #dcfce7;
+}
+
+/* Checkbox personalizado */
+.form-demo .check-group {
+flex-direction: row;
+align-items: center;
+font-size: .96rem;
+color: #374151;
+gap: .5em;
+font-weight: 400;
+}
+.form-demo .check-group input[type="checkbox"] {
+accent-color: var(--secondary);
+width: 1.6em;
+height: 1.6em;
+}
+
+/* Botón plano con pseudoclases */
+.form-demo button {
+padding: .52em 1.3em;
+border-radius: 6px;
+border: none;
+font-size: 1.04rem;
+background: var(--secondary);
+color: #fff;
+font-weight: 600;
+letter-spacing: .02em;
+margin-top: .4rem;
+cursor: pointer;
+box-shadow: 0 2px 8px #2563eb13;
+transition: background .12s, box-shadow .14s, transform .10s;
+}
+.form-demo button:hover {
+box-shadow: 0 4px 12px #2563eb18;
+transform: translateY(-2px) scale(1.03);
+/* No cambia color al hover, solo sombra y escala */
+}
+.form-demo button:active {
+background: var(--primary);
+}
+.form-demo button:disabled {
+background: #cbd5e1;
+color: #94a3b8;
+cursor: not-allowed;
+}
+
+
